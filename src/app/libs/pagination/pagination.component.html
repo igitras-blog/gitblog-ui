@@ -1,0 +1,17 @@
+<ul class="pagination">
+    <li [ngClass]="{disabled: isFirstPage()}">
+        <a (click)="viewPage(1)">
+            <i class="material-icons">chevron_left</i>
+        </a>
+    </li>
+
+    <li class="waves-effect" *ngFor="let p of _pages" [ngClass]="{'active': p.value === currentPage}">
+        <a (click)="viewPage(p.value)">{{p.label}}</a>
+    </li>
+
+    <li class="waves-effect" [ngClass]="{disables: isLastPage()}">
+        <a (click)="viewPage(getLastPage())">
+            <i class="material-icons">chevron_right</i>
+        </a>
+    </li>
+</ul>
